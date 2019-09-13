@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>My Blog</title>
-</head>
-<body>
- 
+{% extends 'blog/base.html' %}
 
-{% if post.publised_date %}
-    <div>
+{% block content %}
+     <div class="post">
+
+        {% if post.publised_date %}   
+   	       
+            <div class="date">
+   	            {{ post.publised_date }}
+   	        </div>    	
    	    
-   	     {{ post.publised_date }}	
-   	    
-    </div>
-{% endif %}  
- 
-<h1> {{ post.title }} </h1>
-<p>  {{  post.text }}  </p>
- 
-</body>
-</html>
+            
+        {% endif %} 
+        <h1> {{ post.title }} </h1>
+        <p>  {{  post.text }}  </p> 
+    </div>   
+{% endblock %}        
