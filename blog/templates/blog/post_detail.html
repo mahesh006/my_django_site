@@ -1,16 +1,18 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-     <div class="post">
+    <div class="post">
 
         {% if post.publised_date %}   
    	       
             <div class="date">
    	            {{ post.publised_date }}
-   	        </div>    	
-   	    
-            
-        {% endif %} 
+   	        </div>  	
+   	              
+        {% endif %}
+  
+    <a href="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-edit fa-2x" style="color: #339af0"></i></a>
+         
         <h1> {{ post.title }} </h1>
         <p>  {{  post.text }}  </p> 
     </div>   
